@@ -26,3 +26,4 @@ Capturing important moments as I progress through this. I have already spent few
 
 # Notes
 - In this exercise though, tools like MS Excel would suffice. Alternatively online cubes can be defined for BI users and then CSV data can be imported manually for online business analytics.
+- Deployed live to [goodbet.meteor.com](http://goodbet.meteor.com) - thanks to meteor for the easy deployment using *meteor deploy*, isn't that cool? :)
