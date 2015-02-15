@@ -13,7 +13,7 @@
         </thead>
         <tbody>
             {{#each settledBets}}
-            <tr>
+            <tr class="{{#if unusualCustomer}}danger{{/if}}">
                 <td>{{customer}}</td>
                 <td>{{event}}</td>
                 <td>{{participant}}</td>
@@ -39,7 +39,7 @@
         </thead>
         <tbody>
             {{#each unsettledBets}}
-            <tr>
+            <tr class="{{#if unusualCustomer}}danger{{/if}}">
                 <td>{{customer}}</td>
                 <td>{{event}}</td>
                 <td>{{participant}}</td>

@@ -43,7 +43,8 @@ if (Meteor.isClient) {
                     event: item.event.id,
                     participant: item.participant.id,
                     stake: item.stake,
-                    win: item.win
+                    win: item.win,
+                    unusualCustomer: item.customer.isUnusual()
                 }});
         },
 
@@ -54,7 +55,8 @@ if (Meteor.isClient) {
                     event: item.event.id,
                     participant: item.participant.id,
                     stake: item.stake,
-                    toWin: item.toWin
+                    toWin: item.toWin,
+                    unusualCustomer: item.customer.isUnusual()
                 }});
         }
     });

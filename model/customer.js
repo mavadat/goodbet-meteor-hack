@@ -20,3 +20,7 @@ Customer.prototype.unsettledBetArrived = function(unsettledBet) {
     this.unsettledBetCount++;
     this.unsettledStakeSum += unsettledBet.stake;
 };
+
+Customer.prototype.isUnusual = function() {
+    return (this.winCount / this.settledBetCount) > 0.6; //more than 60% winning history
+};
