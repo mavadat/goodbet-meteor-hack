@@ -4,6 +4,7 @@
 - Unit Testing Framework: [sanjo:jasmine](https://atmospherejs.com/sanjo/jasmine)
 - Mocking Framework: *(as above)*
 - Markdown Editor: **Sublime Text** + [Chrome Minimalist Markdown Editor](https://chrome.google.com/webstore/detail/minimalist-markdown-edito/pghodfjepegmciihfhdipmimghiakcjf)
+- CSV Import: [harrison:papa-parse](https://atmospherejs.com/harrison/papa-parse)
 
 # Progress
 Capturing important moments as I progress through this. I have already spent few hours reading about Meteor. I am impressed by how quickly nice little apps can be put together with Meteor without typical distractions. Let's see how it pays off for my little Goodbet application.

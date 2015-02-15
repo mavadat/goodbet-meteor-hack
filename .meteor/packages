@@ -10,3 +10,4 @@ insecure
 twbs:bootstrap
 sanjo:jasmine
 velocity:html-reporter
+harrison:papa-parse
