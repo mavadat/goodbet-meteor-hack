@@ -6,6 +6,9 @@
 - Markdown Editor: **Sublime Text** + [Chrome Minimalist Markdown Editor](https://chrome.google.com/webstore/detail/minimalist-markdown-edito/pghodfjepegmciihfhdipmimghiakcjf)
 - CSV Import: [harrison:papa-parse](https://atmospherejs.com/harrison/papa-parse)
 
+# Resources
+- [Why Meteor?](http://www.meteorpedia.com/read/Why_Meteor)
+
 # Progress
 Capturing important moments as I progress through this. I have already spent few hours reading about Meteor. I am impressed by how quickly nice little apps can be put together with Meteor without typical distractions. Let's see how it pays off for my little Goodbet application.
 
@@ -19,3 +22,7 @@ Capturing important moments as I progress through this. I have already spent few
 - As for test running I quiet liked the Velocity integration (**velocity:html-reporter**) with my Meteor app. Automatically launches Karma which by default launches *Chrome* (might change to *PhantomJS* later) and then I get Velocity sidebar on top of my Meteor application display status. Literally in no time I had my own little CI running. +1 to Meteor on this one :)
 - Unfortunately due to Session (UI state) limitation on only accepting EJSON-able types, and Meteor namespacing constraints I had to merge *worksheet.load.js* and *bets.js* into *main.js*. Moving this to MongoDB document would take much longer so I'm happy to live with this for now.
 - I happen to require parameterised test (or data test) with Jasmine. AFAIK it doesn't support OOTB.
+- Unfortunately I ran out of time and there seem to be lots of areas to improve; however, most important part would be treating risk constants (60%, 10x and 30x limits for risky, and $1000 to-win as too high) as variables using sliders for instance so BI user can play with the numbers to better tailor their view. Also a checkbox to filter out risk-free items would be nice.
+
+# Notes
+- In this exercise though, tools like MS Excel would suffice. Alternatively online cubes can be defined for BI users and then CSV data can be imported manually for online business analytics.
