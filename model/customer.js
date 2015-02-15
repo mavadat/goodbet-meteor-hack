@@ -10,6 +10,13 @@ Customer = function(id) {
     this.unsettledStakeSum = 0;
 };
 
-//events
-Customer.prototype.settledBetArrived = function(settledBet) { /*will care later*/ };
-Customer.prototype.unsettledBetArrived = function(unsettledBet) { /*will care later*/ };
+Customer.prototype.settledBetArrived = function(settledBet) {
+    this.settledBetCount++;
+    this.settledStakeSum += settledBet.stake;
+    this.winCount += (settledBet.win > 0) ? 1 : 0;
+};
+
+Customer.prototype.unsettledBetArrived = function(unsettledBet) {
+    this.unsettledBetCount++;
+    this.unsettledStakeSum += unsettledBet.stake;
+};

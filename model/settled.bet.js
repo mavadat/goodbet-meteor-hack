@@ -4,7 +4,4 @@ SettledBet = function(customer, event, participant, stake, win) {
     this.participant = participant;
     this.stake = stake;
     this.win = win;
-
-    //fire events - allow aggregate calculations propagate
-    customer.settledBetArrived(this);
 };

@@ -25,6 +25,31 @@ describe('', function () {
             expect(customer.settledStakeSum).toEqual(0);
             expect(customer.winCount).toEqual(0);
             expect(customer.unsettledBetCount).toEqual(0);
-            expect(customer.unsettledStakeSum).toEqual(0);        });
+            expect(customer.unsettledStakeSum).toEqual(0);
+        });
+
+        it('should have one settled bet and no win when the only settled bet is unfortunate', function() {
+            //arrange
+            var unfortunateBet = new SettledBet(customer, event, participant, 100, 0 /*no win*/);
+
+            //act
+            worksheet.settledBets.add(unfortunateBet);
+
+            //assert
+            expect(customer.settledBetCount).toEqual(1);
+            expect(customer.winCount).toEqual(0);
+        });
+
+        it('should have one settled bet count and single win when the only settled bet is fortunate', function() {
+            //arrange
+            var fortunateBet = new SettledBet(customer, event, participant, 100, 200);
+
+            //act
+            worksheet.settledBets.add(fortunateBet);
+
+            //assert
+            expect(customer.settledBetCount).toEqual(1);
+            expect(customer.winCount).toEqual(1);
+        });
     })
 });
