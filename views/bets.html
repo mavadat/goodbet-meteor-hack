@@ -1,5 +1,53 @@
 <template name="bets">
-{{#if activeWorksheet}}
-<h1>Coming soon...</h1>
+{{#if activeWorksheetAvailable}}
+    <h3>Settled Bets</h3>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Event</th>
+                <th>Participant</th>
+                <th>Stake</th>
+                <th>Win</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each settledBets}}
+            <tr>
+                <td>{{customer}}</td>
+                <td>{{event}}</td>
+                <td>{{participant}}</td>
+                <td>${{stake}}</td>
+                <td>${{win}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h3>Unsettled Bets</h3>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Event</th>
+                <th>Participant</th>
+                <th>Stake</th>
+                <th>To Win</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each unsettledBets}}
+            <tr>
+                <td>{{customer}}</td>
+                <td>{{event}}</td>
+                <td>{{participant}}</td>
+                <td>${{stake}}</td>
+                <td>${{toWin}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
 {{/if}}
 </template>
