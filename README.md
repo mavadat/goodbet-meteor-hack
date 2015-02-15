@@ -1,3 +1,10 @@
+# Toolbox
+- Reactive Test Runner: [meteor-velocity](http://velocity.meteor.com/)
+- Test Runner: Karma
+- Unit Testing Framework: [sanjo:jasmine](https://atmospherejs.com/sanjo/jasmine)
+- Mocking Framework: *(as above)*
+- Markdown Editor: **Sublime Text** + [Chrome Minimalist Markdown Editor](https://chrome.google.com/webstore/detail/minimalist-markdown-edito/pghodfjepegmciihfhdipmimghiakcjf)
+
 # Progress
 Capturing important moments as I progress through this. I have already spent few hours reading about Meteor. I am impressed by how quickly nice little apps can be put together with Meteor without typical distractions. Let's see how it pays off for my little Goodbet application.
 
@@ -7,3 +14,5 @@ Capturing important moments as I progress through this. I have already spent few
 - Oops, this Meteor **var** vs no var got me now! No need for *RequireJS* and this Meteor *Require* didn't work anyways so let's move on.
 - There seem to be an element of events here. I am going with poor man pubsub.
 - I need an agreegate root. I am making up the concept of **Worksheet**. It comes from the idea of user playing around multiple CSV files is focusing on single worksheet at hand. Of course in real world situation this should come from domain but right now I get the luxury of making things up :)
+- For Jasmine tests I don't like this part: It expects my tests to be in specific folder structure like server/unit, client/unit, server/integration, etc and test files cannot be called *spec.js* but *my.spec.js* is accepted. For now I move my aggregation calculation tests to *client/unit* which is not ideal but I have to move on - nearly an hour already and nothing is running yet!
+- As for test running I quiet liked the Velocity integration (**velocity:html-reporter**) with my Meteor app. Automatically launches Karma which by default launches *Chrome* (might change to *PhantomJS* later) and then I get Velocity sidebar on top of my Meteor application display status. Literally in no time I had my own little CI running. +1 to Meteor on this one :)
