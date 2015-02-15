@@ -24,3 +24,7 @@ Customer.prototype.unsettledBetArrived = function(unsettledBet) {
 Customer.prototype.isUnusual = function() {
     return (this.winCount / this.settledBetCount) > 0.6; //more than 60% winning history
 };
+
+Customer.prototype.getAverageStake = function() {
+    return this.settledBetCount > 0 ? this.settledStakeSum / this.settledBetCount : 0;
+};

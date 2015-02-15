@@ -30,6 +30,7 @@
     <table class="table table-hover">
         <thead>
             <tr>
+                <th>&nbsp;</th>
                 <th>Customer</th>
                 <th>Event</th>
                 <th>Participant</th>
@@ -39,7 +40,12 @@
         </thead>
         <tbody>
             {{#each unsettledBets}}
-            <tr class="{{#if unusualCustomer}}danger{{/if}}">
+            <tr class="{{#if risks}}danger{{/if}}">
+                <td>
+                    {{#each risks}}
+                    <span class="label label-danger">{{label}}</span>
+                    {{/each}}
+                </td>
                 <td>{{customer}}</td>
                 <td>{{event}}</td>
                 <td>{{participant}}</td>

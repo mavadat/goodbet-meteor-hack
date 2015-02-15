@@ -31,6 +31,27 @@ if (Meteor.isClient) {
         }
     });
 
+    var getRisks = function(unsettledBet) {
+        debugger;
+        var result = [];
+
+        if(unsettledBet.isTooRisky()) {
+            result.push({label: 'Too Risky 30x'});
+        } else if(unsettledBet.isRisky()) {
+            result.push({label: 'Risky 10x'});
+        };
+
+        if(unsettledBet.customer.isUnusual()) {
+            result.push({label: 'Unusual'});
+        };
+
+        if(unsettledBet.isHigh()) {
+            result.push({label: 'Too High'});
+        };
+
+        return result;
+    };
+
     Template.bets.helpers({
         activeWorksheetAvailable: function() {
             return Session.get('activeWorksheetAvailable');
@@ -56,7 +77,7 @@ if (Meteor.isClient) {
                     participant: item.participant.id,
                     stake: item.stake,
                     toWin: item.toWin,
-                    unusualCustomer: item.customer.isUnusual()
+                    risks: getRisks(item)
                 }});
         }
     });
