@@ -4,7 +4,4 @@ UnsettledBet = function(customer, event, participant, stake, toWin) {
     this.participant = participant;
     this.stake = stake;
     this.toWin = toWin;
-
-    //fire events - allow aggregate calculations propagate
-    customer.unsettledBetArrived(this);
 };

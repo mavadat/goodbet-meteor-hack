@@ -1,4 +1,4 @@
-describe('', function () {
+describe('Single bet aggregate calculation', function () {
     'use strict';
 
     var worksheet;
@@ -13,43 +13,43 @@ describe('', function () {
         participant = worksheet.participants.getOrCreate(1);
     });
 
-    describe('Single bet aggregate calculation', function () {
-        it('should have no settled/unsettled bet history when no settled bet is imported for', function () {
-            //arrange
+    it('should have no settled/unsettled bet history when no settled bet is imported for', function () {
+        //arrange
 
-            //act
-            //none - no settled bet to add to the customer
+        //act
+        //none - no settled bet to add to the customer
 
-            //assert
-            expect(customer.settledBetCount).toEqual(0);
-            expect(customer.settledStakeSum).toEqual(0);
-            expect(customer.winCount).toEqual(0);
-            expect(customer.unsettledBetCount).toEqual(0);
-            expect(customer.unsettledStakeSum).toEqual(0);
-        });
+        //assert
+        expect(customer.settledBetCount).toEqual(0);
+        expect(customer.settledStakeSum).toEqual(0);
+        expect(customer.winCount).toEqual(0);
+        expect(customer.unsettledBetCount).toEqual(0);
+        expect(customer.unsettledStakeSum).toEqual(0);
+    });
+    
 
-        it('should have one settled bet and no win when the only settled bet is unfortunate', function() {
-            //arrange
-            var unfortunateBet = new SettledBet(customer, event, participant, 100, 0 /*no win*/);
+    it('should have one settled bet and no win when the only settled bet is unfortunate', function() {
+        //arrange
+        var unfortunateBet = new SettledBet(customer, event, participant, 100, 0 /*no win*/);
 
-            //act
-            worksheet.settledBets.add(unfortunateBet);
+        //act
+        worksheet.settledBets.add(unfortunateBet);
 
-            //assert
-            expect(customer.settledBetCount).toEqual(1);
-            expect(customer.winCount).toEqual(0);
-        });
+        //assert
+        expect(customer.settledBetCount).toEqual(1);
+        expect(customer.winCount).toEqual(0);
+    });
 
-        it('should have one settled bet count and single win when the only settled bet is fortunate', function() {
-            //arrange
-            var fortunateBet = new SettledBet(customer, event, participant, 100, 200);
 
-            //act
-            worksheet.settledBets.add(fortunateBet);
+    it('should have one settled bet count and single win when the only settled bet is fortunate', function() {
+        //arrange
+        var fortunateBet = new SettledBet(customer, event, participant, 100, 200);
 
-            //assert
-            expect(customer.settledBetCount).toEqual(1);
-            expect(customer.winCount).toEqual(1);
-        });
-    })
+        //act
+        worksheet.settledBets.add(fortunateBet);
+
+        //assert
+        expect(customer.settledBetCount).toEqual(1);
+        expect(customer.winCount).toEqual(1);
+    });
 });
