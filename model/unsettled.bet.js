@@ -15,5 +15,5 @@ UnsettledBet.prototype.isTooRisky = function() {
 };
 
 UnsettledBet.prototype.isHigh = function() {
-    return this.stake >= 1000; //$1000 or more is high stake
+    return this.toWin >= 1000; //$1000 or more is high stake
 };

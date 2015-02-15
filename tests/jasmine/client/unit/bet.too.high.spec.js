@@ -15,7 +15,7 @@ describe('Too high unsettled bet', function () {
         //arrange
 
         //act
-        var unsettledBet = new UnsettledBet(null, null, null, 1000, 2000);
+        var unsettledBet = new UnsettledBet(null, null, null, 500, 1000);
 
         //assert
         expect(unsettledBet.isHigh()).toBeTruthy();

@@ -55,5 +55,17 @@
             {{/each}}
         </tbody>
     </table>
+
+    <dl class="dl-horizontal">
+        <dt><span class="label label-danger">Too Risky 30x</span></dt>
+        <dd>Bet is at-least 30x more than customer's average historical bets.</dd>
+        <dt><span class="label label-danger">Risky 10x</span></dt>
+        <dd>Bet is between 10x to 30x more than customer average historical bets.</dd>
+        <dt><span class="label label-danger">Unusual</span></dt>
+        <dd>Bet is from customer who historically wins at the unusual 60% rate.</dd>
+        <dt><span class="label label-danger">High</span></dt>
+        <dd>Amount to be won is $1000 or higher.</dd>
+    </dl>
+
 {{/if}}
 </template>
