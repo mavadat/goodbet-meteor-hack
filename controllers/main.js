@@ -5,6 +5,9 @@ if (Meteor.isClient) {
         activeWorksheetNotAvailable: function() {
             return !Session.get('activeWorksheetAvailable');
         },
+
+        sampleSettledCsv: Sample.SettledCsvText,
+        sampleUnsettledCsv: Sample.UnsettledCsvText
     });
 
     var worksheetFromCsv = function(event) {
